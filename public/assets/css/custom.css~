@@ -1,0 +1,224 @@
+.customLogin{
+   margin-left: 20% !important;
+    margin-top: 9%;
+    width: 50%;
+}
+
+h2{
+	font-size:1.56rem !important;
+}
+
+main, nav, footer{
+
+	padding-left:18%;
+}
+
+@media only screen and (max-width : 992px) {
+    nav, main, footer {
+      padding-left: 0;
+    }
+}
+.sharepost >img{
+	height:30px;
+}
+
+i.fb {
+    background: url("/assets/images/img-sprite.png") no-repeat scroll -6px -4px rgba(0, 0, 0, 0);
+    float: left;
+    height: 32px;
+    transition: all 0.5s ease 0s;
+    vertical-align: middle;
+    width: 32px;
+}
+
+i.twt {
+    background: url("/assets/images/img-sprite.png") no-repeat scroll -48px -4px rgba(0, 0, 0, 0);
+    float: left;
+    height: 32px;
+    transition: all 0.5s ease 0s;
+    vertical-align: middle;
+    width: 32px;
+}
+
+i.in {
+    background: url("/assets/images/img-sprite.png") no-repeat scroll -89px -4px rgba(0, 0, 0, 0);
+    float: left;
+    height: 32px;
+    transition: all 0.5s ease 0s;
+    vertical-align: middle;
+    width: 32px;
+}
+
+i.rss {
+    background: url("/assets/images/img-sprite.png") no-repeat scroll -128px -4px rgba(0, 0, 0, 0);
+    float: left;
+    height: 32px;
+    transition: all 0.5s ease 0s;
+    vertical-align: middle;
+    width: 32px;
+}
+
+
+i.comt {
+    background: url("/assets/images/dat.png") no-repeat scroll -82px 2px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 13px;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 13px;
+}
+
+i.date {
+    background: url("/assets/images/dat.png") no-repeat scroll 2px 2px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 13px;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 13px;
+}
+
+
+.foot-right li{
+	display:inline-block;
+	margin:0 1em 0 0;
+}
+
+.our-right h1 {
+    background: none repeat scroll 0 0 #566666;
+    box-shadow: 0 0 1px 0 #000;
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 0.5em;
+    line-height: 2.62rem;
+}
+
+.more {
+    border: 1px solid #566666;
+    padding: 3px;
+    width: 80px;
+}
+.custom-nav-right{
+	margin-right:5%;
+}
+
+
+.btn-2g {
+    border-radius: 40px;
+}
+
+.btn-2 {
+    background: none repeat scroll 0 0 #cb4e4e !important;
+    box-shadow: 0 6px #ab3c3c !important;
+    color: #fff !important;
+    transition: none 0s ease 0s !important;
+}
+
+.custombtn {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 15px 30px;
+    outline: medium none;
+    padding: 25px 80px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-2g:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+
+
+
+.btn-2g:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+
+
+.custom-f-container{
+	width:100% !important;
+
+}
+.teal{
+	background-color:#EE6E73 !important;
+}
+
+.custum-copyright{
+	bottom:1;
+	width:100%;
+	position:fixed;
+}
+
+.custom-btn{
+	background-color:#EE6E73 !important;
+}
+
+.bug-logo img{
+	height:80%;
+	width:80%;
+}
+
+.fixed-scroll{
+	position: fixed;
+    right: 0;
+}
+
+.custom-section{
+	border:1px solid gray; 
+	text-align:center;
+}
+
+.customtitle h4,h5{
+	color:#9e9e9e;
+}
+.customtitle :hover{
+	color:#8d8d8d;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+.direction{
+	float:left;
+}
+
+@media only screen and (max-width: 380px) {
+   #findmylocation {
+    margin-top: 5px !important;
+ }
+}
+
+.bold > a {
+    font-weight: bold;
+}
