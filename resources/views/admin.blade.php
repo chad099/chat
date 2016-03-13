@@ -1,24 +1,30 @@
-@extends('layouts.admin')
+@extends('layouts.default')
 
 @section('content')
-	
-	@if($page=='dashboard')
+
+	@if($page=='admin')
 		@include('pages.admin.dashboard')
-		
-	@elseif($page=='nav')	
-	
-		@include('pages.admin.nav')
-		
-	@elseif($page=='post')
-		
-		@include('pages.admin.post.index')
-		
-	@elseif($page=='app')
-		@include('pages.admin.apps.app')
-		
-	@elseif($page=='footer')
-		@include('pages.admin.footer.index')
-	
-	@endif	
+
+	@elseif($page=='tutorial')
+
+		@include('pages.admin.tutorial')
+
+	@elseif($page=='tutorial_create_edit')
+
+		@include('pages.admin.tutorial_create_edit')
+
+	@elseif($page=='subjectlist')
+		@include('pages.admin.subjectlist')
+
+	@elseif($page=='create_edit_subject')
+		@include('pages.admin.create_edit_subject')
+
+	@elseif($page=='topic')
+		@include('pages.admin.topiclist')
+
+	@elseif($page=='topic_create')
+			@include('pages.admin.topic_create')
+
+	@endif
 
 @endsection

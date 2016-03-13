@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Auth,Redirect;
 
 class AuthController extends Controller
 {
@@ -28,7 +30,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new authentication controller instance.
@@ -69,4 +71,37 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+   public function getLogin(){
+
+     $data['page'] = 'login';
+     return view('index', $data);
+   }
+
+   public function postLogin(Request $request){
+     $this->validate($request, [
+        'email' => 'required|email',
+        'password' => 'required|min:6|max:255',
+    ]);
+
+    $credentials = $request->only('email', 'password');
+    if (Auth::attempt($credentials, $request->has('remember')))
+    {
+      if(Auth::user()->type == 'admin')
+        return redirect('admin');
+      else
+        return redirect('dashboard');
+    }
+
+    return Redirect::back()
+                ->withInput($request->only('email', 'remember'))
+                ->withErrors([
+                    'username' => 'These credentials do not match our records.',
+                ]);
+   }
+
+   public function logout(){
+     Auth::logout();
+     return redirect('/');
+   }
 }

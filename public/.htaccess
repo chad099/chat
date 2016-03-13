@@ -13,4 +13,10 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    AddType video/ogg .ogv
+    AddType video/ogg .ogg
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
+    AddType application/x-shockwave-flash swf
 </IfModule>

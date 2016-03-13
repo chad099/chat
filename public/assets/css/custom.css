@@ -174,7 +174,7 @@ i.date {
 }
 
 .custom-section{
-	border:1px solid gray; 
+	border:1px solid gray;
 	text-align:center;
 }
 
@@ -221,4 +221,37 @@ i.date {
 
 .bold > a {
     font-weight: bold;
+}
+
+.login-wrap{
+  width: 60%;
+  position: relative;
+  left:auto;
+  right: auto;
+}
+
+.login-wrap p{
+  text-align: center;
+}
+
+
+.login-wrap .btn-center {
+    left: auto;
+    position: relative;
+    right: auto;
+    text-align: right;
+    width: 60%;
+}
+
+.dropdown-content.select-dropdown {
+  z-index: 99999;
+}
+
+.cust-row{
+  margin: 10px;
+}
+
+.collection-item:hover{
+  background-color: #D3D3D3;
+
 }

@@ -10,7 +10,7 @@
 		  </div>
 		</li>
 	</ul>
-	
+
 	<ul class="collapsible collapsible-accordion">
 		<li class="bold"><a class="collapsible-header  waves-effect waves-teal">Apps</a>
 		 <div class="collapsible-body" style="display: none;">
@@ -22,8 +22,7 @@
 	</ul>
 	<li class="bold"><a href="/admin/footer">Footer Manage</a></li>
 	<li class="bold"><a href="contact">Contact</a></li>
-	<li class="bold"><a href="/logout">Logout</a></li>	
+	<li class="bold"><a href="/logout">Logout</a></li>
 </ul>
 
 <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
- 

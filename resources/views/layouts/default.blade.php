@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <title>Monthly Report</title>
+  <title>Video Tutorials</title>
   <!-- CSS  -->
   <link href="/assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="/assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -18,41 +18,29 @@
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX3ITMuqhf7qySqQ96BUCben3hqRekIgk&libraries=places"></script>
 </head>
 <body>
-	
+
 <nav role="navigation">
+
 @include('includes.navigation')
 </nav>
 <main>
+  @include('errors.message')
 	@yield('content')
-	<div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">We know the future problems of your coding</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="/assets/images/fourth.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
 </main>
-  
+
+@if(!Auth::check() || Auth::check() && Auth::user()->type !='admin')
 <footer class="page-footer teal">
-	@include('includes.footer')
+  @include('includes.footer')
 </footer>
+@endif
+
+@if(Auth::check() && Auth::user()->type == 'admin')
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red">
+    <a href="/addtutorial/create" class="btn-floating btn-large red">
       <i class="large material-icons">mode_edit</i>
     </a>
-    
-    <!--<ul>
-      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>-->
 </div>
-
+@endif
 </main>
   <!--  Scripts-->
   <script src="/assets/js/materialize.js"></script>
@@ -63,14 +51,18 @@
   </body>
 <script>
 $('body').niceScroll({
-					cursorcolor:"#ee6e73", 
+					cursorcolor:"#ee6e73",
 					cursorwidth:"10px",
 					cursorborderradius: '0px',
 					autohidemode : false,
 					background : '#DDDDDD',
 					cursorborder : 'none',
-					
+
 					});
-        					
-</script>  
+
+          $(document).ready(function() {
+              $('select').material_select();
+            });
+
+</script>
 </html>
