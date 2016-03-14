@@ -66,4 +66,8 @@ Route::group([ 'middleware'=>['web']], function () {
         Route::resource('profile', 'ProfileController');
     });
 
+    Route::group(['prefix'=>''],function(){
+        Route::resource('user', 'UserController');
+    });
+
 });

@@ -65,5 +65,13 @@ $('body').niceScroll({
               $('ul.tabs').tabs();
             });
 
+  var url = window.location.pathname;
+  $('#slide-out li a').each(function(){
+    if($(this).attr('href') == url){
+      $(this).parent().addClass('active');
+    }
+
+  });
+
 </script>
 </html>
