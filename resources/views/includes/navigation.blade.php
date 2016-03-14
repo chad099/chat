@@ -6,7 +6,7 @@
   		<!-- Dropdown Structure -->
   		<ul id='dropdown1' class='dropdown-content'>
   			<li><a href="/profile">Profile</a></li>
-  			<li><a href="/logout">Logout</a></li>
+        <li><a href="/logout">Logout</a></li>
   		</ul>
 	   @else
 		   <li><a href="/login">Login</a></li>
@@ -28,7 +28,7 @@
   <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header">Subject</i></a>
+          <a class="collapsible-header subject-ta">Subject</i></a>
           <div class="collapsible-body">
             <ul>
               <li><a href="/addsubject">subjectManage</a></li>
@@ -39,6 +39,7 @@
       </ul>
     </li>
   	<li><a href="/addtutorial">tutorialManage</a></li>
+    <li><a href="/user">userManage</a></li>
   @else
     <li><a href="/tutorial">tutorial</a></li>
   @endif

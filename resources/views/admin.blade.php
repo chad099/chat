@@ -25,6 +25,12 @@
 	@elseif($page=='topic_create')
 			@include('pages.admin.topic_create')
 
+	@elseif($page=='user')
+			@include('pages.admin.user')
+
+	@elseif($page == 'user_create')
+			@include('pages.admin.user_create_edit')	
+
 	@endif
 
 @endsection
