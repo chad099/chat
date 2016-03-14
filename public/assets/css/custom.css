@@ -253,5 +253,28 @@ i.date {
 
 .collection-item:hover{
   background-color: #D3D3D3;
+}
 
+.video-title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.video-subject {
+  color: gray;
+  font-size: 20px;
+}
+
+.in-ext {
+  color: #bfbfbf;
+}
+
+.row.description-body {
+  background-color: #f8f8f8;
+  min-height: 200px;
+  padding:11px;
+}
+
+.description{
+  color: gray;
 }

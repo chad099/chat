@@ -55,8 +55,9 @@ class addTutorialController extends Controller
            'subject_id' => 'required',
            'std_class' => 'required',
            'topic_id' => 'required',
-           'video' => 'required',
+           'title' => 'required',
        ]);
+
       $this->addEditVideo($request);
       return redirect('/addtutorial');
   }

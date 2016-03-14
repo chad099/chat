@@ -10,8 +10,9 @@
           <tr>
               <th>Class</th>
               <th>Subject</th>
+              <th>Title</th>
               <th>Desciption</th>
-              <th>Action</th>
+              <th width="250">Action</th>
           </tr>
         </thead>
 
@@ -20,6 +21,7 @@
           <tr>
             <td>{{ $video->std_class}}</td>
             <td>{{ $video->subject->name}}</td>
+            <td>{{ $video->title}}</td>
             <td>{{ $video->description}}</td>
             <td>
               <a href="/addtutorial/{{$video->id}}/edit" class="waves-effect waves-light btn">edit</a>
@@ -34,4 +36,5 @@
       @endif
 
     </div>
+    {!! $videos->render() !!}
   </div>

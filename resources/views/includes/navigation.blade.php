@@ -28,7 +28,7 @@
   <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header active">Subject</i></a>
+          <a class="collapsible-header">Subject</i></a>
           <div class="collapsible-body">
             <ul>
               <li><a href="/addsubject">subjectManage</a></li>

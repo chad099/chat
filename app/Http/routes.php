@@ -24,12 +24,6 @@
 |
 */
 
-Route::get('testplayer',function(){
-  $data['page'] = 'player';
-  return view('index', $data);
-});
-
-
 Route::group([ 'middleware'=>['web']], function () {
     Route::get('/', 'HomeController@index');
     Route::get('login','Auth\AuthController@getLogin');
@@ -55,7 +49,8 @@ Route::group([ 'middleware'=>['web']], function () {
         Route::resource('dashboard', 'DashboardController');
     });
 
-    Route::group(['prefix'=>''],function(){
+    Route::group(['prefix'=>'','middlerware'=>'authcheck'],function(){
+        Route::get('download/{id}','TutorialController@download');
         Route::resource('tutorial', 'TutorialController');
     });
 

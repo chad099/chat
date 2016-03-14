@@ -15,12 +15,10 @@ class AuthCheck
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check())
+        echo  "here"; die;
+        if(!Auth::check())
         {
-          if(Auth::user()->type == 'admin')
-            return redirect('/admin');
-          else
-            return redirect('/dashboard');
+            return redirect('/login');
         }
 
         return $next($request);

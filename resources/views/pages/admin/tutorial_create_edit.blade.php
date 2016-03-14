@@ -3,8 +3,16 @@
   if(isset($video->std_class))
     $subjects = Utils::getsubjects($video->std_class);
 /*--}}
+<div class="row"></div>
 <div class="container">
   <form method="post" action="/addtutorial" id="tutorialForm" enctype="multipart/form-data">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a href="#video">Video</a></li>
+      <li class="tab col s3"><a href="#files">Files</a></li>
+    </ul>
+  </div>
+  <div id="video" class="col s12">
     <input type="hidden" name="id" value="{{ (isset($video))? $video->id :'' }}"/>
     <div class="input-field col s12"> @include('errors.validation') </div>
     <div class="input-field col s12">
@@ -43,6 +51,10 @@
          <label>Select Topic</label>
       </div>
 
+      <div class="input-field col s12">
+        <input id="title" type="text" name="title" class="validate" value="{{ (isset($video))? $video->title:'' }}">
+        <label for="title" @if(isset($video->title)) class="active" @endif>Title</label>
+      </div>
 
         <div class="input-field col s12">
           <textarea id="textarea1" name="description" class="materialize-textarea">{{ (isset($video))? $video->description:'' }}</textarea>
@@ -58,6 +70,26 @@
             <input class="file-path validate" type="text">
           </div>
       </div>
+  </div><!-- Video closed here-->
+
+    <div id="files" class="col s12">
+      <div class="row cust-row">
+        <a href="javascript:void(0);" id="more_file" class="waves-effect waves-light btn">Add More File</a>
+      </div>
+
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <input type="file" name="files[]">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+    </div>
+
+    </div><!-- File closed here-->
+
+
     <button class="btn waves-effect waves-light" type="submit" name="action">Save
         <i class="material-icons right">send</i>
     </button>

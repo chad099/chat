@@ -48,8 +48,24 @@ $(document).ready(function(){
 			});
 	});
 
+	$('#more_file').click(function(){
+		var randId = generateRandomStrin();
+		var html = '<div class="file-field input-field"><div class="btn"><span>File</span><input type="file" name="files[]"></div><div class="file-path-wrapper"><input class="file-path validate" type="text"></div></div>';
+		$('#files').append(html);
+	});
 
 });
+
+function generateRandomStrin()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
 
 function createOption(_this, data){
 	var subjects = '<option value="" disabled selected>Choose your option</option>';

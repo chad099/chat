@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnTopicId extends Migration
+class AddColumnToVIdeo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddColumnTopicId extends Migration
     public function up()
     {
         Schema::table('videos',function(Blueprint $table){
-          $table->integer('topic_id');
+          $table->string('title');
         });
     }
 
@@ -25,7 +25,7 @@ class AddColumnTopicId extends Migration
     public function down()
     {
       Schema::table('videos',function(Blueprint $table){
-        $table->dropColumn('topic_id');
+        $table->dropColumn('title');
       });
     }
 }

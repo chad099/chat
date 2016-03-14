@@ -6,7 +6,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Video;
 use Illuminate\Support\Facades\Input;
-use Session;
+use Sessionm;
+use App\File;
 class TutorialController extends Controller
 {
   /**
@@ -14,6 +15,11 @@ class TutorialController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+
+   public function __construct(){
+     $this->middleware('auth');
+   }
+
   public function index()
   {
       $data['tutorials'] = Video::paginate(10);
@@ -50,7 +56,10 @@ class TutorialController extends Controller
    */
   public function show($id)
   {
-      //
+    $data['video'] = Video::find($id);
+    $data['page'] = 'player';
+    return view('index',$data);
+
   }
 
   /**
@@ -85,5 +94,10 @@ class TutorialController extends Controller
   public function destroy($id)
   {
       //
+  }
+
+  public function download($id){
+    $file = File::find($id);
+    return response()->download('files/'.$file->path);
   }
 }
