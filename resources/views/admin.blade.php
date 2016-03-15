@@ -29,7 +29,13 @@
 			@include('pages.admin.user')
 
 	@elseif($page == 'user_create')
-			@include('pages.admin.user_create_edit')	
+			@include('pages.admin.user_create_edit')
+
+	@elseif($page == 'school')
+			@include('pages.admin.school')
+
+	@elseif($page == 'school_create_edit')
+			@include('pages.admin.school_create_edit')
 
 	@endif
 

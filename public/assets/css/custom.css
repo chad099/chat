@@ -278,3 +278,17 @@ i.date {
 .description{
   color: gray;
 }
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  height: 120px;
+  width: 120px;
+}
+
+span.remov_l {
+  position: absolute;
+  margin: 0px 0px 0px 7px;
+}

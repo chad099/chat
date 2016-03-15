@@ -70,4 +70,10 @@ Route::group([ 'middleware'=>['web']], function () {
         Route::resource('user', 'UserController');
     });
 
+    Route::group(['prefix'=>''],function(){
+        Route::get('logo/{id}/remove','SchoolController@removeLogo');
+        Route::get('school/{id}/delete','SchoolController@destroy');
+        Route::resource('school', 'SchoolController');
+    });
+
 });

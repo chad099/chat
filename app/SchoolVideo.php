@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class File extends Model
+class SchoolVideo extends Model
 {
-    protected $table = 'files';
+    protected $table = 'school_videos';
     protected $guarded = array();
 }
