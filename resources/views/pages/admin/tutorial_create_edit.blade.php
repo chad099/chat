@@ -9,6 +9,7 @@
   <div class="col s12">
     <ul class="tabs">
       <li class="tab col s3"><a href="#video">Video</a></li>
+      <li class="tab col s3"><a href="#schools">Schools</a></li>
       <li class="tab col s3"><a href="#files">Files</a></li>
     </ul>
   </div>
@@ -71,6 +72,32 @@
           </div>
       </div>
   </div><!-- Video closed here-->
+
+    <div id="schools" class="col s12">
+      <div class="row cust-row">
+        <p style="text-align:center;" >Choose schools</p>
+        {{--*/
+          $school_videos = array();
+          $schools = Utils::schools();
+          if(isset($video)){
+            $school_videos = $video->getAssindTutorial();
+          }
+          /*--}}
+        @if(count($schools)>0)
+        @foreach($schools as $school)
+          <p>
+            <input type="checkbox" name="schools[]" id="{{ $school->name }}" {{--*/ if(in_array($school->id,$school_videos)) echo  "checked"; /*--}} value="{{ $school->id }}" />
+            <label for="{{ $school->name }}">{{ $school->name }}</label>
+          </p>
+        @endforeach
+        @else
+          <p>No School Exists</p>
+        @endif
+
+    </div>
+
+  </div><!-- Schools closed here-->
+
 
     <div id="files" class="col s12">
       <div class="row cust-row">

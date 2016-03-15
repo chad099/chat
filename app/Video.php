@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Input,Auth;
 use Illuminate\Http\Request;
 use Session;
-use App\File;
+use App\File, App\SchoolVideo;
 class Video extends Model
 {
     protected $table = 'videos';
@@ -39,7 +39,23 @@ class Video extends Model
 
       }
 
+      self::assignToSchool($request, $video->id);
+
       Session::flash('success','Tutorial created successfully');
+      return true;
+    }
+
+    public static function assignToSchool($request,$id){
+        $schools = $request->schools;
+        SchoolVideo::where('video_id', $id)->delete();
+        if(count($schools)>0){
+          foreach($schools as $school){
+              $school_video = new SchoolVideo;
+              $school_video->school_id = $school;
+              $school_video->video_id =$id;
+              $school_video->save();
+          }
+        }
       return true;
     }
 
@@ -78,5 +94,18 @@ class Video extends Model
 
     public function files(){
       return $this->hasMany('App\File','video_id','id');
+    }
+
+    public function getAssindTutorial(){
+      $data = [];
+      $school_videos = SchoolVideo::where('video_id',$this->id)->get();
+      if(count($school_videos)>0){
+        foreach($school_videos as $school_video){
+          if(!in_array($school_video->school_id,$data)){
+              array_push($data,$school_video->school_id);
+          }
+        }
+      }
+      return $data;
     }
 }

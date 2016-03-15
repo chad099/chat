@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-class UserController extends Controller
+use App\School;
+use Session;
+class SchoolController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data['users'] = User::where('type','!=','admin')->paginate(10);
-        $data['page'] = 'user';
+        $data['schools'] = School::orderBy('created_at','DESC')->paginate(10);
+        $data['page'] = 'school';
         return view('admin',$data);
     }
 
@@ -28,8 +29,13 @@ class UserController extends Controller
      */
     public function create()
     {
-      $data['page'] = 'user_create';
-      return view('admin',$data);
+        $data['page'] = 'school_create_edit';
+        return view('admin',$data);
+    }
+
+    protected function validator(array $data,$rules)
+    {
+        return Validator::make($data, $rules);
     }
 
     /**
@@ -40,14 +46,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->addEditUser($request);
-        return redirect('/user');
-    }
+        $this->validate($request,[
+          'name'=>'required',
+          'address'=>'required',
+          'logo'=>'mimes:jpeg,jpg,png|max:3000'
+        ]);
 
-      protected function validator(array $data,$rules)
-      {
-          return Validator::make($data, $rules);
-      }
+        School::store($request);
+        return redirect('/school');
+    }
 
     /**
      * Display the specified resource.
@@ -60,18 +67,6 @@ class UserController extends Controller
         //
     }
 
-    public function addEditUser($request){
-
-        $this->validate($request, [
-           'name' => 'required',
-           'email' => 'email',
-           'password' => 'required|same:confirm_password',
-       ]);
-
-      User::userRegister($request);
-      return true;
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -80,8 +75,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $data['user']  = User::find($id);
-        $data['page']  = 'user_create';
+        $data['page'] = 'school_create_edit';
+        $data['school'] = School::find($id);
         return view('admin',$data);
     }
 
@@ -94,7 +89,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request,[
+        'name'=>'required',
+        'address'=>'required'
+      ]);
+
+      School::store($request);
+      return redirect('/school');
     }
 
     /**
@@ -105,6 +106,25 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $school = School::find($id);
+        if($school)
+            $school->delete();
+        Session::flash('success','School deleted successfully');
+        return back();
+    }
+
+    public function removeLogo($id){
+      $school = School::find($id);
+      try{
+          unlink($school->logo);
+          $school->logo = '';
+          $school->save();
+      }catch(\Exception $e){
+        $school->logo = '';
+        $school->save();
+      }
+      Session::flash('succces','Logo removed successfully');
+      return back();
+
     }
 }

@@ -56,6 +56,7 @@ class addTutorialController extends Controller
            'std_class' => 'required',
            'topic_id' => 'required',
            'title' => 'required',
+           'video'=>'mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv'
        ]);
 
       $this->addEditVideo($request);

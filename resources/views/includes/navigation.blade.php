@@ -31,15 +31,16 @@
           <a class="collapsible-header subject-ta">Subject</i></a>
           <div class="collapsible-body">
             <ul>
-              <li><a href="/addsubject">subjectManage</a></li>
+              <li><a href="/addsubject">SubjectManage</a></li>
               <li><a href="/topic">Topic</a></li>
             </ul>
           </div>
         </li>
       </ul>
     </li>
-  	<li><a href="/addtutorial">tutorialManage</a></li>
-    <li><a href="/user">userManage</a></li>
+  	<li><a href="/addtutorial">TutorialManage</a></li>
+    <li><a href="/user">UserManage</a></li>
+    <li><a href="/school">SchoolManage</a></li>
   @else
     <li><a href="/tutorial">tutorial</a></li>
   @endif

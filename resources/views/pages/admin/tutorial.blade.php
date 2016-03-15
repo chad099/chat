@@ -8,6 +8,7 @@
       <table class="highlight">
         <thead>
           <tr>
+              <th>Sr no</th>
               <th>Class</th>
               <th>Subject</th>
               <th>Title</th>
@@ -17,8 +18,11 @@
         </thead>
 
         <tbody>
+          {{--*/  $inc = 1; /*--}}
+
           @foreach($videos as $video)
           <tr>
+            <td>{{ $inc }}</td>
             <td>{{ $video->std_class}}</td>
             <td>{{ $video->subject->name}}</td>
             <td>{{ $video->title}}</td>
@@ -28,6 +32,7 @@
               <a href="/addtutorial/{{$video->id}}/delete" onclick="return confirm('Are you sure?');" class="waves-effect waves-light btn">delete</a>
             </td>
           </tr>
+          {{--*/  $inc++; /*--}}
           @endforeach
         </tbody>
       </table>
