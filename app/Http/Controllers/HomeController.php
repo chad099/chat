@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['tutorials'] = Video::paginate(10);
+        $data['tutorials'] = [];
         $data['page'] = 'index';
         return view('index', $data);
     }

@@ -1,6 +1,7 @@
 <div class="container">
     <div class="section">
       <!--   Icon Section   -->
+      <h1>Welcome Auth User</h1>
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">

@@ -30,50 +30,19 @@ Route::group([ 'middleware'=>['web']], function () {
     Route::post('login','Auth\AuthController@postLogin');
     Route::get('logout','Auth\AuthController@logout');
 
-    Route::group(['prefix'=>'','middlerware'=>'auth'],function(){
-      Route::resource('admin', 'AdminController');
-    });
-
-    Route::group(['prefix'=>'','middlerware'=>'auth'],function(){
-      Route::get('addtutorial/{id}/delete','addTutorialController@destroy');
-        Route::resource('addtutorial', 'addTutorialController');
-    });
-
-    Route::group(['prefix'=>'','middlerware'=>'auth'],function(){
-        Route::get('addsubject/{id}/delete','AddSubjectController@destroy');
-        Route::post('getsubjects','AddSubjectController@getsubjects');
-        Route::resource('addsubject', 'AddSubjectController');
-    });
-
-    Route::group(['prefix'=>'','middlerware'=>'auth'],function(){
-        Route::resource('dashboard', 'DashboardController');
-    });
-
-    Route::group(['prefix'=>'','middlerware'=>'authcheck'],function(){
-        Route::get('download/{id}','TutorialController@download');
-        Route::resource('tutorial', 'TutorialController');
-    });
-
-
-    Route::group(['prefix'=>''],function(){
-        Route::get('topic/{id}/delete','TopicController@destroy');
-        Route::post('gettopics','TopicController@getTopics');
-        Route::resource('topic', 'TopicController');
-    });
-
-
-    Route::group(['prefix'=>''],function(){
-        Route::resource('profile', 'ProfileController');
-    });
+    Route::get('social/{type}', 'SocialAuthController@socialLogin');
+    Route::get('redirect/{type}', 'SocialAuthController@redirect');
 
     Route::group(['prefix'=>''],function(){
         Route::resource('user', 'UserController');
     });
 
     Route::group(['prefix'=>''],function(){
-        Route::get('logo/{id}/remove','SchoolController@removeLogo');
-        Route::get('school/{id}/delete','SchoolController@destroy');
-        Route::resource('school', 'SchoolController');
+        Route::resource('dashboard', 'DashboardController');
+    });
+
+    Route::group(['prefix'=>'api'],function(){
+        Route::resource('google', 'GoogleApiController');
     });
 
 });

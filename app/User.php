@@ -13,8 +13,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','token','auth_type', 'profile_picture'
     ];
+
+    protected $guarded = array();
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -62,7 +64,7 @@ class User extends Authenticatable
       $license = License::where('user_id',$this->id)->first();
       if($license)
         return true;
-        
+
       return false;
     }
 

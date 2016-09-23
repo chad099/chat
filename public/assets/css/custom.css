@@ -150,7 +150,7 @@ i.date {
 
 }
 .teal{
-	background-color:#EE6E73 !important;
+	background-color:#46d1ef !important;
 }
 
 .custum-copyright{
@@ -291,4 +291,44 @@ i.date {
 span.remov_l {
   position: absolute;
   margin: 0px 0px 0px 7px;
+}
+nav {
+  background-color: #46d1ef;
+}
+
+.chad-btn:hover {
+    background-color: #4fdc97;
+}
+
+.chad-btn {
+  background-color: #68EFAD;
+  width: 200px;
+}
+
+.profile-picture {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 10px 0px 0px 37px;
+}
+
+
+.btn-color {
+  background-color: #68EFAD;
+}
+
+.space{
+  height:10px;
+}
+
+.social-btn {
+  top:20px;
+}
+
+.cust-submit-btn {
+      margin-bottom: 20px;
 }

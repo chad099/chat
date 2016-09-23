@@ -13,9 +13,19 @@
         </div>
       </div>
       <div class="btn-center">
-      <button class="btn waves-effect waves-light" type="submit" name="action">Login
+      <button class="btn waves-effect waves-light chad-btn cust-submit-btn" type="submit" name="action">Login
           <i class="material-icons right">send</i>
     </button>
   </div>
     </form>
+    <div class="text-center">
+    <div class="row col">
+        <a href="/social/google" class="waves-effect waves-light btn chad-btn"><i class="material-icons left">cloud</i>google</a>
+    </div>
+    <div class="row col">
+        <a href="/social/facebook"class="waves-effect waves-light btn chad-btn"><i class="material-icons left">cloud</i>facebook</a>
+    </div>
+
+    </div>
+
 </div>

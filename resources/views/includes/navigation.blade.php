@@ -2,7 +2,7 @@
  <ul>
     <li class="divider"></li>
     @if(Auth::check())
-		  <a class='dropdown-button btn custom-btn' href='javascript:void(0)' data-activates='dropdown1'>welcome, {{Auth::user()->name}}</a>
+		  <a class='dropdown-button btn btn-color' href='javascript:void(0)' data-activates='dropdown1'>welcome, {{Auth::user()->name}}</a>
   		<!-- Dropdown Structure -->
   		<ul id='dropdown1' class='dropdown-content'>
   			<li><a href="/profile">Profile</a></li>
@@ -15,9 +15,14 @@
 </div>
 
 <ul id="slide-out" class="side-nav fixed">
-	<div class="bug-logo" style="height:150px;">
-	<img src="/assets/images/bug-logo1.png"/>
-	</div>
+  {{--*/
+    $profile_picture ='/assets/images/bug-logo1.png';
+    if(Auth::check()){
+      $profile_picture = Auth::user()->profile_picture;
+    }
+    /*--}}
+	<div class="profile-picture" style="background-image:url({{ $profile_picture }})"></div>
+
 	<div class="divider"></div>
 	<li><a href="/">Home</a></li>
 

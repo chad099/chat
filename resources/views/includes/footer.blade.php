@@ -30,7 +30,7 @@
   <div class="container custom-f-container">
 	 <div class="row">
 		  <div class="col s12 m4 l4 left">
-				Made by <a class="brown-text text-lighten-3" href="#">Bug Logi Tech</a>
+				Made by <a class="brown-text text-lighten-3" href="#">Passionistas</a>
 		  </div>
 	</div>
   </div>
